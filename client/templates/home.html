@@ -1,0 +1,48 @@
+<h1>CSC Approval Screen</h1>
+<div>
+  <input type="checkbox" name="shortcut1" value="Single_Orders">Single Orders <br>
+  <input type="checkbox" name="shortcut2" value="Multi_Item">Multi Item <br>
+  <input type="checkbox" name="shortcut3" value="Pending_Orders">Pending Orders <br>
+  <input type="checkbox" name="shortcut4" value="Multi_quantity">Multi Quantity <br>
+  <input type="checkbox" name="shortcut5" value="Priority">Priority <br>
+  <input type="checkbox" name="shortcut6" value="72Hrs">72hrs <br>
+</div>
+<br>
+<!-- Quick search allows to search incoming 'new' orders and use filters to refine the result set for approval processing.
+ Filter by Order#, Ship Method, Destination Country, SKU (Drop down multi-sku selectable, Sku Description,
+ Order size (Single, Multiple, All), Product Form, Ship to State (Multiselectable For US only),
+Order Date and Time, Order Status, Order Source (E-Com, ROPIS, Retail Store) -->
+<select name="cars">
+  <option value="volvo">Order Number</option>
+  <option value="saab">Ship Method</option>
+  <option value="fiat">Destination Country</option>
+  <option value="audi">SKU</option>
+  <input type="submit">
+</select>
+
+
+
+<br><br>
+<table id="postTable" >
+  <thead>
+    <tr class='clickable-row'>
+      <input type="button" ng-click="orderCtrl.sortpOrder()">P Order Number:</th>
+      <th class="postTableCss">P Order Number:</th>
+      <th class="postTableCss">ATG Order Number:</th>
+      <th class="postTableCss">Order Date/Time:</th>
+      <th class="postTableCss">SKU:</th>
+      <th class="postTableCss">Product Form:</th>
+      <th class="postTableCss">fragrance:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr ng-repeat="order in orders" id='searchContainer'  style='cursor:pointer'>
+      <td>{{order.pOrder}}</td>
+      <td>{{order.atgOrder}}</td>
+      <td>{{order.orderDateTime}}</td>
+      <td>{{order.sku}}</td>
+      <td>{{order.productForm}}</td>
+      <td>{{order.fragrance}}</td>
+    </tr>
+</center>
